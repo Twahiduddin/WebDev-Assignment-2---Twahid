@@ -23,6 +23,7 @@ function addR() {
     }
     grid.appendChild(row);
 }
+
 //Adds a column
 function addC() {
     //alert("Clicked Add Col")
@@ -57,7 +58,12 @@ function removeR() {
         rows -= 1;
     }
 
+    if (rows === 0 && columns !== 0) {
+        columns = 0;
+    }
+
 }
+
 //Remove a column
 function removeC() {
     let cols = document.getElementsByTagName("tr");
@@ -72,7 +78,15 @@ function removeC() {
         }
         columns -= 1;
     }
+
+    if (columns === 0 && rows !== 0) {
+        let counter = rows; 
+        for (i = 0; i < counter; i++) {
+            removeR();
+        }
+    }
 }
+
 //sets global var for selected color
 function selected(){
     colorSelected = document.getElementById("selectedID").value;
