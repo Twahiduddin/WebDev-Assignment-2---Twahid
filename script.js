@@ -1,23 +1,31 @@
 let colorSelected; 
+let rows = 0;
+let cols = 0;
 
 //Adds a row
 function addR() {
     //alert("Clicked Add Row")
     let grid = document.getElementById("grid");
-    let rows = document.getElementsByTagName("tr");
-    console.log(rows.length);
     
-    if (rows.length === 0) {
-        let row = document.createElement("tr");
+    if (rows === 0 || cols === 0) {
+        cols += 1;
+    };
+    
+    let row = document.createElement("tr");
+    rows += 1;
+
+    for (let i = 0; i < cols; i++){
         let col = document.createElement("td");
         col.onclick = function (){
             this.style.backgroundColor = colorSelected;
         };
         row.appendChild(col);
-        grid.appendChild(row);
-
     }
+    grid.appendChild(row);
 }
+
+    
+
 //Adds a column
 function addC() {
     //alert("Clicked Add Col")
