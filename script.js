@@ -38,7 +38,9 @@ function addC() {
         add.onclick = function (){
             this.style.backgroundColor = colorSelected;
         };
+
         cols[i].appendChild(add);
+
         };
         columns+=1;
     }
@@ -46,7 +48,17 @@ function addC() {
 
 //Removes a row
 function removeR() {
-    alert("Clicked Remove Row")
+    if (rows === 0) {
+        alert("Clicked Remove Row")
+    }
+    
+    else {
+        document.getElementById("grid").lastElementChild.remove();
+        rows -= 1;
+    }
+
+    
+
 }
 //Remove a column
 function removeC() {
