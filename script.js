@@ -78,6 +78,13 @@ function removeC() {
         }
         columns -= 1;
     }
+
+    if (columns === 0 && rows !== 0) {
+        let counter = rows; 
+        for (i = 0; i < counter; i++) {
+            removeR();
+        }
+    }
 }
 
 //sets global var for selected color
