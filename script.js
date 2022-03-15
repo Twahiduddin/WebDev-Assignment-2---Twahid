@@ -80,11 +80,15 @@ function selected(){
 }
 
 function fill(){
-    alert("Clicked Fill All")
+   let fillall = document.querySelectorAll("#grid tr td");
+
+   for (i = 0; i < rows * columns; i++) {
+    fillall[i].style.backgroundColor = colorSelected;
+   }
 }
 
 function clearAll(){
-    alert("Clicked Clear All")
+    
 }
 
 function fillU(){
