@@ -49,7 +49,7 @@ function addC() {
 //Removes a row
 function removeR() {
     if (rows === 0) {
-        alert("Clicked Remove Row")
+        alert("Clicked Remove Row");
     }
     
     else {
@@ -57,12 +57,21 @@ function removeR() {
         rows -= 1;
     }
 
-    
-
 }
 //Remove a column
 function removeC() {
-    alert("Clicked Remove Col")
+    let cols = document.getElementsByTagName("tr");
+    
+    if (columns === 0) {
+        alert("Clicked Remove Col");
+    }
+    
+    else {
+        for (i = 0; i < rows; i++) {
+            cols[i].lastElementChild.remove();
+        }
+        columns -= 1;
+    }
 }
 //sets global var for selected color
 function selected(){
