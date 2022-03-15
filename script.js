@@ -88,7 +88,16 @@ function fill(){
 }
 
 function clearAll(){
+    if (rows === 0 && columns === 0) {
+        alert("Clicked Clear All");
+    }
     
+    else {
+        let clear = document.querySelectorAll("#grid tr td");
+        for (i = 0; i < rows * columns; i++) {
+            clear[i].style.backgroundColor = "white";
+           }
+    }
 }
 
 function fillU(){
