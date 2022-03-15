@@ -80,13 +80,26 @@ function selected(){
 }
 
 function fill(){
-    alert("Clicked Fill All")
+   let fillall = document.querySelectorAll("#grid tr td");
+
+   for (i = 0; i < rows * columns; i++) {
+    fillall[i].style.backgroundColor = colorSelected;
+   }
 }
 
 function clearAll(){
-    alert("Clicked Clear All")
+    let clear = document.querySelectorAll("#grid tr td");
+        
+    for (i = 0; i < rows * columns; i++) {
+        clear[i].style.backgroundColor = "white";
+    }
 }
 
 function fillU(){
-    alert("Clicked Fill All Uncolored")
+    let filluncolored = document.querySelectorAll("#grid tr td");
+    for (i = 0; i < rows * columns; i++) {
+       if (filluncolored[i].style.backgroundColor === "" || filluncolored[i].style.backgroundColor === "white") {
+            filluncolored[i].style.backgroundColor = colorSelected;
+       }
+    }
 }
