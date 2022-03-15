@@ -101,5 +101,10 @@ function clearAll(){
 }
 
 function fillU(){
-    alert("Clicked Fill All Uncolored")
+    let filluncolored = document.querySelectorAll("#grid tr td");
+    for (i = 0; i < rows * columns; i++) {
+       if (filluncolored[i].style.backgroundColor === "" || filluncolored[i].style.backgroundColor === "white") {
+            filluncolored[i].style.backgroundColor = colorSelected;
+       }
+    }
 }
